@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration System</title>
+  <meta name="description" content="Register students - add, edit, delete; data saved in localStorage" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Student Registration System</h1>
+    <p class="lead">Add, edit, and remove student records. Records persist using <code>localStorage</code>.</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <form id="studentForm" novalidate>
+        <div class="grid">
+          <label>Student Name
+            <input type="text" id="name" name="name" placeholder="Full name" required />
+          </label>
+
+          <label>Student ID
+            <input type="text" id="studentId" name="studentId" placeholder="Numeric ID" required />
+          </label>
+
+          <label>Email
+            <input type="email" id="email" name="email" placeholder="name@example.com" required />
+          </label>
+
+          <label>Contact Number
+            <input type="text" id="contact" name="contact" placeholder="10 digit phone" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="saveBtn">Add Student</button>
+          <button type="button" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="display-section">
+      <h2>Registered Students</h2>
+      <div id="tableWrapper" class="table-wrapper">
+        <table id="studentsTable" aria-live="polite">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact No.</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- rows added by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Prepared for: Student Registration System — Assignment</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
